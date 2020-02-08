@@ -1,16 +1,22 @@
+#Spec file
 require 'car'
 
+#Example group
 describe 'Car' do
 
+  #Nested group. Describe or Context
   describe 'attributes' do
     
+    #Example
     it "allows reading and writing for :make" do
       car = Car.new
       car.make = 'Test'
+      #Expectations: expect( ).to( )  or  expect( ).not_to( )
       expect(car.make).to eq('Test')
     end
     
-    it "allows reading and writing for :year" do
+    #temporarily skip by writin x beforehand
+    xit "allows reading and writing for :year" do
       car = Car.new
       car.year = 9999
       expect(car.year).to eq(9999)
@@ -23,9 +29,15 @@ describe 'Car' do
     end
     
     it "allows reading for :wheels" do
+      #You can skip a test and give it a reason, or type pending instead of skip but will show as error, because it runs the tests
+      skip("Debugging a problem")
+      #pending("Debugging a problem")
       car = Car.new
       expect(car.wheels).to eq(4)
     end
+
+    #this will show as pending
+    it "allows writing for :doors" 
     
   end
   
