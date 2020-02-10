@@ -1,5 +1,15 @@
 require 'car'
 
+# NOTES:
+# One expectation per example
+
+#The verbs are matchers:
+# .to eq
+# expect(actual).to match(expected)
+# .to be
+# .to match_array
+#https://relishapp.com/rspec/rspec-expectations/docs/built-in-matchers/be-matchers
+
 describe 'Car' do
 
   describe 'attributes' do
