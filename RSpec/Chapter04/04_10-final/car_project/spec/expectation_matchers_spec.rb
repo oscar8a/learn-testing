@@ -1,6 +1,22 @@
 describe 'Expectation Matchers' do
+
+  # NOTES:
+  # One expectation per example
+
+  # The verbs are matchers:
+  # .to eq
+  # expect(actual).to match(expected)
+  # .to be
+  # .to match_array
+  # https://relishapp.com/rspec/rspec-expectations/docs/built-in-matchers/be-matchers
+
+  #Deprecated: .should
   
   describe 'equivalence matchers' do
+
+    # .eq || == loose equality
+    # .eql value equality
+    # .equal identity equality
 
     it 'will match loose equality with #eq' do
       a = "2 cats"
@@ -36,6 +52,8 @@ describe 'Expectation Matchers' do
   end
   
   describe 'truthiness matchers' do
+    
+    # .to be(true or false)
 
     it 'will match true/false' do
       expect(1 < 2).to be(true)       # do not use 'be_true'
@@ -46,6 +64,8 @@ describe 'Expectation Matchers' do
       expect(0).not_to be(false)      # 0 is not exactly false
     end
     
+    # .to be_truthy or .to be_falsey
+
     it 'will match truthy/falsey' do
       expect(1 < 2).to be_truthy
       expect(1 > 2).to be_falsey
@@ -55,6 +75,8 @@ describe 'Expectation Matchers' do
       expect(0).not_to be_falsey      # but 0 is still not falsey enough
     end
     
+    # be_nil or be nil
+
     it 'will match nil' do
       expect(nil).to be_nil
       expect(nil).to be(nil)          # either way works
